@@ -1,0 +1,22 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: panel_qty5.PcbDoc   1/1/2022  12:41:10 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : panel_qty5.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.508mm (20mil)                                           Round             283       PTH        1800.56mm (70.89inch)
+T2      0.7mm (28mil)                                             Round             160       PTH        1034.51mm (40.73inch)
+T3      0.711mm (28mil)                                           Round             50        PTH        1170.92mm (46.10inch)
+T4      1.6mm (63mil)                                             Round             180       PTH        1570.35mm (61.82inch)
+T5      2mm (79mil)             +/-0mm (0mil)                     Round             70        PTH        904.43mm (35.61inch)
+T6      2.032mm (80mil)         +/-0mm (0mil)                     Round             10        PTH        222.29mm (8.75inch)
+T7      3mm (118mil)                                              Round             4         PTH        729.55mm (28.72inch)
+T8      4mm (157mil)                                              Round             20        PTH        1173.81mm (46.21inch)
+T9      4.445mm (175mil)                                          Round             10        PTH        412.59mm (16.24inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              787
+
+Total Processing Time (hh:mm:ss) : 00:00:00
