@@ -1,0 +1,5 @@
+DRC Rules Export File for PCB: C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\ECE 191\XT60-30 Fuse Board V1.1\panel_qty6.PcbDoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

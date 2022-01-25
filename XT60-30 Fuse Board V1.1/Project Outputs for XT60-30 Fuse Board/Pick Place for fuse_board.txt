@@ -1,0 +1,61 @@
+Altium Designer Pick and Place Locations
+C:\Users\ryant\Google Drive (rvtran@ucsd.edu)\ECE 191\XT60-30 Fuse Board\Project Outputs for XT60-30 Fuse Board\Pick Place for fuse_board.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       18/11/21
+Time:       12:37
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+Designator Layer    Center-X(mm) Center-Y(mm) Rotation 
+R6         TopLayer 10.1600      35.5600      270      
+R2         TopLayer 22.8600      30.4800      270      
+R1         TopLayer 10.1600      30.4800      270      
+D2         TopLayer 21.5900      40.6400      90       
+D1         TopLayer 11.4300      40.6400      90       
+XF1        TopLayer 16.5100      31.7500      90       
+R4         TopLayer 48.2600      30.4800      270      
+J4         TopLayer 54.6100      11.4300      90       
+D4         TopLayer 46.9900      40.6400      90       
+J8         TopLayer 105.4100     11.4300      90       
+J6         TopLayer 80.0100      11.4300      90       
+J1         TopLayer 16.5100      11.4300      90       
+J2         TopLayer 29.2100      11.4300      90       
+XF9        TopLayer 118.1100     31.7500      270      
+XF8        TopLayer 105.4100     31.7500      270      
+XF7        TopLayer 92.7100      31.7500      270      
+XF6        TopLayer 80.0100      31.7500      270      
+XF5        TopLayer 67.3100      31.7500      270      
+XF4        TopLayer 54.6100      31.7500      270      
+XF3        TopLayer 41.9100      31.7500      270      
+XF2        TopLayer 29.2100      31.7500      270      
+R20        TopLayer 124.4600     35.5600      270      
+R19        TopLayer 111.7600     35.5600      270      
+R18        TopLayer 124.4600     30.4800      270      
+R17        TopLayer 111.7600     30.4800      270      
+R16        TopLayer 99.0600      35.5600      270      
+R15        TopLayer 86.3600      35.5600      270      
+R14        TopLayer 73.6600      35.5600      270      
+R13        TopLayer 99.0600      30.4800      270      
+R12        TopLayer 86.3600      30.4800      270      
+R11        TopLayer 73.6600      30.4800      270      
+R8         TopLayer 35.5600      35.5600      270      
+R7         TopLayer 22.8600      35.5600      270      
+R10        TopLayer 60.9600      35.5600      270      
+R9         TopLayer 48.2600      35.5600      270      
+R5         TopLayer 60.9600      30.4800      270      
+R3         TopLayer 35.5600      30.4800      270      
+J9         TopLayer 118.1100     11.4300      90       
+J7         TopLayer 92.7100      11.4300      90       
+J5         TopLayer 67.3100      11.4300      90       
+J3         TopLayer 41.9100      11.4300      90       
+D10        TopLayer 123.1900     40.6400      90       
+D9         TopLayer 110.4900     40.6400      90       
+D8         TopLayer 97.7900      40.6400      90       
+D7         TopLayer 85.0900      40.6400      90       
+D6         TopLayer 72.3900      40.6400      90       
+D5         TopLayer 59.6900      40.6400      90       
+D3         TopLayer 34.2900      40.6400      90       
