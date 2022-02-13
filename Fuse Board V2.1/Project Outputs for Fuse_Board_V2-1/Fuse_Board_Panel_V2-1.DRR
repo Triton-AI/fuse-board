@@ -1,0 +1,22 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Fuse_Board_Panel_V2-1.PcbDoc   2/13/2022  2:39:22 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Fuse_Board_Panel_V2-1-RoundHoles.TXT
+ASCII SlotHoles File : Fuse_Board_Panel_V2-1-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.508mm (20mil)                                           Round             283       PTH        1800.56mm (70.89inch)
+T2      0.711mm (28mil)                                           Round             50        PTH        1170.92mm (46.10inch)
+T3      1mm (39mil)                                               Slot              80        PTH        2084.13mm (82.05inch)
+T4      1.6mm (63mil)                                             Round             180       PTH        1570.35mm (61.82inch)
+T5      2mm (79mil)             -0.4mm (16mil)                    Round             80        PTH        948.20mm (37.33inch)
+T6      3mm (118mil)                                              Round             4         PTH        729.55mm (28.72inch)
+T7      4mm (157mil)                                              Round             20        PTH        1173.81mm (46.21inch)
+T8      5.7mm (224mil)                                            Round             10        PTH        426.22mm (16.78inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              707
+
+Total Processing Time (hh:mm:ss) : 00:00:00
