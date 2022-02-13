@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2\Fuse_Board_Panel_V2.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=fuse_board_panel_v2-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=fuse_board_panel_v2-slotholes.txt|DrillLayers=gtl,gbl

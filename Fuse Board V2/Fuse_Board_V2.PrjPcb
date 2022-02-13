@@ -64,7 +64,7 @@ GenerateClassCluster=0
 DocumentUniqueId=HGCUDXIA
 
 [Document2]
-DocumentPath=Fuse_Board_Symbols.SchLib
+DocumentPath=Fuse_Board_Symbols_V2.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -81,7 +81,7 @@ GenerateClassCluster=0
 DocumentUniqueId=PJMJRSYI
 
 [Document3]
-DocumentPath=Fuse_Board_Footprints.PcbLib
+DocumentPath=Fuse_Board_Footprints_V2.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -98,7 +98,7 @@ GenerateClassCluster=0
 DocumentUniqueId=GFKOSVDV
 
 [Document4]
-DocumentPath=fuse_board.PcbDoc
+DocumentPath=Fuse_Board_V2.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -113,6 +113,139 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XVFSQNSU
+
+[Document5]
+DocumentPath=Fuse_Board_Panel_V2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=QQXVAODQ
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Fuse_Board_V2\Design Rule Check - Fuse_Board_Panel_V2.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2-RoundHoles.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2-SlotHoles.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM3
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM4
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.REP
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for Fuse_Board_V2\Fuse_Board_Panel_V2.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Fuse_Board_V2\Pick Place for Fuse_Board_Panel_V2.csv
+DItemRevisionGUID=
 
 [Parameter1]
 Name=EngineerName
@@ -329,11 +462,12 @@ Name=Assembly Outputs
 Description=
 TargetPrinter=Brother HL-2280DW Printer
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
-OutputType1=Test Points For Assembly
-OutputName1=Test Point Report
+OutputType1=Assembly
+OutputName1=Assembly Drawings
 OutputDocumentPath1=
 OutputVariantName1=[No Variations]
 OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
 OutputType2=Pick Place
 OutputName2=Generates pick and place files
 OutputDocumentPath2=
@@ -342,13 +476,12 @@ OutputDefault2=0
 Configuration2_Name1=ForceUpdateSettings
 Configuration2_Item1=False
 Configuration2_Name2=OutputConfigurationParameter1
-Configuration2_Item2=Record=PickPlaceView|Units=Metric|GenerateCSVFormat=True|GenerateTextFormat=True|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|IncludeStandardNoBOM=True|Filter= |FilterActive=False|YFlip=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:False,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:False,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Package / Case,Fixed:False,Metric:False,Visible:False,Sort:None,Position:44|Column#18=Name:Current - Test,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24|Column#19=Name:Height - Seated (Max),Fixed:False,Metric:False,Visible:False,Sort:None,Position:27|Column#20=Name:Configuration,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23|Column#21=Name:Number of Terminations,Fixed:False,Metric:False,Visible:False,Sort:None,Position:41|Column#22=Name:SnapEDA_Link,Fixed:False,Metric:False,Visible:False,Sort:None,Position:55|Column#23=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:46|Column#24=Name:Minimum Order,Fixed:False,Metric:False,Visible:False,Sort:None,Position:38|Column#25=Name:MP,Fixed:False,Metric:False,Visible:False,Sort:None,Position:40|Column#26=Name:Part Status,Fixed:False,Metric:False,Visible:False,Sort:None,Position:47|Column#27=Name:Power (Watts),Fixed:False,Metric:False,Visible:False,Sort:None,Position:49|Column#28=Name:Lens Style,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32|Column#29=Name:Packaging,Fixed:False,Metric:False,Visible:False,Sort:None,Position:45|Column#30=Name:Ratings,Fixed:False,Metric:False,Visible:False,Sort:None,Position:51|Column#31=Name:Lens Size,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31|Column#32=Name:Lens Transparency,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33|Column#33=Name:Height (Max),Fixed:False,Metric:False,Visible:False,Sort:None,Position:28|Column#34=Name:Voltage - Forward (Vf) (Typ),Fixed:False,Metric:False,Visible:False,Sort:None,Position:63|Column#35=Name:Wavelength - Dominant,Fixed:False,Metric:False,Visible:False,Sort:None,Position:64|Column#36=Name:Resistance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:52|Column#37=Name:Size / Dimension,Fixed:False,Metric:False,Visible:False,Sort:None,Position:54|Column#38=Name:Availability,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16|Column#39=Name:Supplier 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:56|Column#40=Name:Tolerance,Fixed:False,Metric:False,Visible:False,Sort:None,Position:60|Column#41=Name:Lifecycle Status,Fixed:False,Metric:False,Visible:False,Sort:None,Position:34|Column#42=Name:Viewing Angle,Fixed:False,Metric:False,Visible:False,Sort:None,Position:62|Column#43=Name:Supplier Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:58|Column#44=Name:ComponentLink2URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21|Column#45=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:35|Column#46=Name:Supplier Device Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:57|Column#47=Name:Millicandela Rating,Fixed:False,Metric:False,Visible:False,Sort:None,Position:37|Column#48=Name:Lens Color,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30|Column#49=Name:LastUpdated,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29|Column#50=Name:MF,Fixed:False,Metric:False,Visible:False,Sort:None,Position:36|Column#51=Name:Device Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:25|Column#52=Name:Wavelength - Peak,Fixed:False,Metric:False,Visible:False,Sort:None,Position:65|Column#53=Name:Composition,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22|Column#54=Name:ComponentLink2Description,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20|Column#55=Name:Temperature Coefficient,Fixed:False,Metric:False,Visible:False,Sort:None,Position:59|Column#56=Name:ComponentLink1URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19|Column#57=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:43|Column#58=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:61|Column#59=Name:Color,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17|Column#60=Name:Series,Fixed:False,Metric:False,Visible:False,Sort:None,Position:53|Column#61=Name:ComponentLink1Description,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18|Column#62=Name:Features,Fixed:False,Metric:False,Visible:False,Sort:None,Position:26|Column#63=Name:Mounting Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:39|Column#64=Name:PartId,Fixed:False,Metric:False,Visible:False,Sort:None,Position:48|Column#65=Name:Price,Fixed:False,Metric:False,Visible:False,Sort:None,Position:50|Column#66=Name:Operating Temperature,Fixed:False,Metric:False,Visible:False,Sort:None,Position:42|DocumentPath=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\ECE 191\XT60-30 Fuse Board\panel_qty6.PcbDoc
-OutputType3=Assembly
-OutputName3=Assembly Drawings
+Configuration2_Item2=Record=PickPlaceView|Units=Metric|GenerateCSVFormat=True|GenerateTextFormat=False|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|IncludeStandardNoBOM=True|Filter= |FilterActive=False|YFlip=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:False,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:False,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Package / Case,Fixed:False,Metric:False,Visible:False,Sort:None,Position:39|Column#18=Name:Current - Test,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23|Column#19=Name:Configuration,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22|Column#20=Name:SnapEDA_Link,Fixed:False,Metric:False,Visible:False,Sort:None,Position:47|Column#21=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:41|Column#22=Name:Minimum Order,Fixed:False,Metric:False,Visible:False,Sort:None,Position:35|Column#23=Name:MP,Fixed:False,Metric:False,Visible:False,Sort:None,Position:37|Column#24=Name:Part Status,Fixed:False,Metric:False,Visible:False,Sort:None,Position:42|Column#25=Name:Lens Style,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29|Column#26=Name:Packaging,Fixed:False,Metric:False,Visible:False,Sort:None,Position:40|Column#27=Name:Lens Size,Fixed:False,Metric:False,Visible:False,Sort:None,Position:28|Column#28=Name:Lens Transparency,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30|Column#29=Name:Height (Max),Fixed:False,Metric:False,Visible:False,Sort:None,Position:25|Column#30=Name:Voltage - Forward (Vf) (Typ),Fixed:False,Metric:False,Visible:False,Sort:None,Position:53|Column#31=Name:Wavelength - Dominant,Fixed:False,Metric:False,Visible:False,Sort:None,Position:54|Column#32=Name:Size / Dimension,Fixed:False,Metric:False,Visible:False,Sort:None,Position:46|Column#33=Name:Availability,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16|Column#34=Name:Supplier 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:48|Column#35=Name:Lifecycle Status,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31|Column#36=Name:Viewing Angle,Fixed:False,Metric:False,Visible:False,Sort:None,Position:52|Column#37=Name:Supplier Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:50|Column#38=Name:ComponentLink2URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21|Column#39=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32|Column#40=Name:Supplier Device Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:49|Column#41=Name:Millicandela Rating,Fixed:False,Metric:False,Visible:False,Sort:None,Position:34|Column#42=Name:Lens Color,Fixed:False,Metric:False,Visible:False,Sort:None,Position:27|Column#43=Name:LastUpdated,Fixed:False,Metric:False,Visible:False,Sort:None,Position:26|Column#44=Name:MF,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33|Column#45=Name:Device Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24|Column#46=Name:Wavelength - Peak,Fixed:False,Metric:False,Visible:False,Sort:None,Position:55|Column#47=Name:ComponentLink2Description,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20|Column#48=Name:ComponentLink1URL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19|Column#49=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:38|Column#50=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:51|Column#51=Name:Color,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17|Column#52=Name:Series,Fixed:False,Metric:False,Visible:False,Sort:None,Position:45|Column#53=Name:ComponentLink1Description,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18|Column#54=Name:Mounting Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:36|Column#55=Name:PartId,Fixed:False,Metric:False,Visible:False,Sort:None,Position:43|Column#56=Name:Price,Fixed:False,Metric:False,Visible:False,Sort:None,Position:44|Column#57=Name:Check_prices,Fixed:False,Metric:False,Visible:False,Sort:None,Position:56|DocumentPath=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2\Fuse_Board_Panel_V2.PcbDoc
+OutputType3=Test Points For Assembly
+OutputName3=Test Point Report
 OutputDocumentPath3=
 OutputVariantName3=[No Variations]
 OutputDefault3=0
-PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
 
 [OutputGroup5]
 Name=Fabrication Outputs
@@ -363,7 +496,7 @@ OutputDefault1=0
 Configuration1_Name1=ForceUpdateSettings
 Configuration1_Item1=False
 Configuration1_Name2=OutputConfigurationParameter1
-Configuration1_Item2=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Metric|ZeroesMode=SuppressTrailingZeroes|DocumentPath=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\ECE 191\XT60-30 Fuse Board\panel_qty6.PcbDoc
+Configuration1_Item2=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|GenerateSeparateViaTypeFiles=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Metric|ZeroesMode=SuppressTrailingZeroes|DocumentPath=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2\Fuse_Board_Panel_V2.PcbDoc
 OutputType2=Mask
 OutputName2=Solder/Paste Mask Prints
 OutputDocumentPath2=
@@ -428,7 +561,7 @@ OutputDefault12=0
 Configuration12_Name1=ForceUpdateSettings
 Configuration12_Item1=False
 Configuration12_Name2=OutputConfigurationParameter1
-Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Metric|GerberUnit=Metric|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16973830~1,16973832~1,16973834~1,16777217~1,16842751~1,16973835~1,16973833~1,16973831~1,16908289~1,16908301~1,16908303~1,16973837~1,16973848~1,16973849~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False|DocumentPath=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\ECE 191\XT60-30 Fuse Board\panel_qty6.PcbDoc
+Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GenerateReports=True|GerberUnit=Metric|GerberUnit=Metric|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16973830~1,16973832~1,16973834~1,16777217~1,16842751~1,16973835~1,16973833~1,16973831~1,16908289~1,16908290~1,16908291~1,16908292~1,16908293~1,16908301~1,16908303~1,16973837~1,16973848~1,16973849~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=True|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False|DocumentPath=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2\Fuse_Board_Panel_V2.PcbDoc
 
 [OutputGroup6]
 Name=Report Outputs
@@ -450,9 +583,11 @@ Configuration1_Item3=OpenExported=False|AddToProject=False|ReportBOMViolationsIn
 Configuration1_Name4=GroupOrder
 Configuration1_Item4=Comment=True|Footprint=True
 Configuration1_Name5=SortOrder
-Configuration1_Item5=Designator=Up|Comment=Up|Footprint=Up
+Configuration1_Item5=Designator=Up|Comment=Up
 Configuration1_Name6=VisibleOrder
-Configuration1_Item6=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120
+Configuration1_Item6=Part Number=100|Description=120|Designator=120|Quantity=120|Comment=120
+Configuration1_Name7=VisibleOrder_Flat
+Configuration1_Item7=Part Number=100|Description=120|Designator=120|Quantity=120|Comment=120
 OutputType2=BOM_ReportCompare
 OutputName2=BOM Compare
 OutputDocumentPath2=
@@ -1078,6 +1213,48 @@ SelectedOnly=0
 UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=Celestial Altium Library - altium_library.DbLib/LED - Indication
+ComponentDesignItemID0=19-217/R6C-AL1M2VY/3T
+ComponentSymbolReference0=LED
+ComponentUpdate0=0
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=Celestial Altium Library - altium_library.DbLib/LED - Indication
+ComponentDesignItemID1=LTST-C193TGKT-5A
+ComponentSymbolReference1=LED
+ComponentUpdate1=0
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=Fuse_Board_Symbols.SchLib
+ComponentDesignItemID2=AL5809-15P1-7
+ComponentSymbolReference2=AL5809-15P1-7
+ComponentUpdate2=0
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=Fuse_Board_Symbols.SchLib
+ComponentDesignItemID3=Capacitor Generic
+ComponentSymbolReference3=Capacitor Generic
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=Fuse_Board_Symbols.SchLib
+ComponentDesignItemID4=XT60-M
+ComponentSymbolReference4=XT60-M
+ComponentUpdate4=0
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=Fuse_Board_Symbols.SchLib
+ComponentDesignItemID5=XT90PB-M
+ComponentSymbolReference5=XT90PB-M
+ComponentUpdate5=0
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=XT60-30_Fuse_Board_Symbols.SchLib
+ComponentDesignItemID6=3557-2
+ComponentSymbolReference6=3557-2
+ComponentUpdate6=0
+ComponentIsDeviceSheet6=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1091,6 +1268,119 @@ RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
+ParameterName0=Availability
+ParameterUpdate0=1
+ParameterName1=Check_prices
+ParameterUpdate1=1
+ParameterName2=Color
+ParameterUpdate2=1
+ParameterName3=Comment
+ParameterUpdate3=1
+ParameterName4=Component Kind
+ParameterUpdate4=1
+ParameterName5=ComponentLink1Description
+ParameterUpdate5=1
+ParameterName6=ComponentLink1URL
+ParameterUpdate6=1
+ParameterName7=ComponentLink2Description
+ParameterUpdate7=1
+ParameterName8=ComponentLink2URL
+ParameterUpdate8=1
+ParameterName9=Configuration
+ParameterUpdate9=1
+ParameterName10=Current - Test
+ParameterUpdate10=1
+ParameterName11=Description
+ParameterUpdate11=1
+ParameterName12=Device Package
+ParameterUpdate12=1
+ParameterName13=Height (Max)
+ParameterUpdate13=1
+ParameterName14=LastUpdated
+ParameterUpdate14=1
+ParameterName15=Lens Color
+ParameterUpdate15=1
+ParameterName16=Lens Size
+ParameterUpdate16=1
+ParameterName17=Lens Style
+ParameterUpdate17=1
+ParameterName18=Lens Transparency
+ParameterUpdate18=1
+ParameterName19=Library Reference
+ParameterUpdate19=1
+ParameterName20=Lifecycle Status
+ParameterUpdate20=1
+ParameterName21=Manufacturer
+ParameterUpdate21=1
+ParameterName22=MF
+ParameterUpdate22=1
+ParameterName23=Millicandela Rating
+ParameterUpdate23=1
+ParameterName24=Minimum Order
+ParameterUpdate24=1
+ParameterName25=Mounting Type
+ParameterUpdate25=1
+ParameterName26=MP
+ParameterUpdate26=1
+ParameterName27=Package
+ParameterUpdate27=1
+ParameterName28=Package / Case
+ParameterUpdate28=1
+ParameterName29=Packaging
+ParameterUpdate29=1
+ParameterName30=Part Number
+ParameterUpdate30=1
+ParameterName31=Part Status
+ParameterUpdate31=1
+ParameterName32=PartId
+ParameterUpdate32=1
+ParameterName33=Price
+ParameterUpdate33=1
+ParameterName34=Series
+ParameterUpdate34=1
+ParameterName35=Size / Dimension
+ParameterUpdate35=1
+ParameterName36=SnapEDA_Link
+ParameterUpdate36=1
+ParameterName37=Supplier 1
+ParameterUpdate37=1
+ParameterName38=Supplier Device Package
+ParameterUpdate38=1
+ParameterName39=Supplier Part Number 1
+ParameterUpdate39=1
+ParameterName40=Value
+ParameterUpdate40=1
+ParameterName41=Viewing Angle
+ParameterUpdate41=1
+ParameterName42=Voltage - Forward (Vf) (Typ)
+ParameterUpdate42=1
+ParameterName43=Wavelength - Dominant
+ParameterUpdate43=1
+ParameterName44=Wavelength - Peak
+ParameterUpdate44=1
+ModelTypeGroup0=PCBLIB
+ModelTypeUpdate0=1
+ModelType0=PCBLIB
+ModelName0=AMASS_XT60-M
+ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=FUSE_3557-2
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=LED 0603_1608 GREEN
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=LED 0603_1608 RED
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=POWERDI_123
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=RADIAL_CAP_10mm
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=XT90PB-M
+ModelUpdate6=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
