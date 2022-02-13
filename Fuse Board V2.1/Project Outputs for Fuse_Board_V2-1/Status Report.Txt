@@ -1,0 +1,12 @@
+Source PCB Design Fuse_Board_Panel_V2-1.PcbDoc contains embedded board array. It is recomended to generate individual BOM for each embedded board PCB design.
+
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [Fuse_Board_V2-1.PrjPcb]
+   Generated File[Pick Place for Fuse_Board_Panel_V2-1.csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 2:39:55 PM On 2/13/2022

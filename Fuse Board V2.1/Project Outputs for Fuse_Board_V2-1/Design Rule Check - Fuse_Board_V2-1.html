@@ -1,0 +1,576 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2/13/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2:39:32 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc" class="file"><acronym title="C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc">C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">80</td></tr>
+</table>
+</td>
+</table><a name="IDUWRLT5ICHZSECL3VPFKB5S4PHBMGXTQ5CIQLUPFIEAMZZSYN3SH"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDU1XKRQP21JANEGMB3KMLO3NCKWN3L5NMGAGUJNA2B5AA1WIAGHG">Clearance Constraint (Gap=7.874mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDURIVXM04W0C1PWLBEC4TCFK1ZCCYQ2UBLVIUVXDBTWOEGL10BS0O">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBAOSRXXKN4P1ITBVLI0FIX3RDOI1A1QLUL20WGSTNHMMOY05EIF">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNSEYUEESU5CIJF5BQ5JGQR00OOWK4WAQC21FWUOULYP1XF2H0KGD">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDTUMRV5DFTYXMODZIVAUJ5VENPYLN1F3MA4PCCOOIUNET2BRHPCO">Width Constraint (Min=5mil) (Max=20mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWERJ0A2JLTSNDZP4OUD00KDUGBR1EM10SKA3H2IDQ1P0IT0I5UP">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID01ZIU0ARD0EDJTUCQLAOT3DXLP3035MO0ISA10GT3RHRXSL3C02I">Hole Size Constraint (Min=7.874mil) (Max=250mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID01RETJWFQ50IOJVXAMBHOV0JUB1SFHPZYWK3ZDG2EQGOAFUQFUT">Hole Size Constraint (Min=7.874mil) (Max=248.031mil) (InDrillLayerPair('Top Layer - Bottom Layer'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3ZKOCDXAG5C0NXVZKFBZ0K1SRCU22OLMQB2QVUPOUHHBNYB3W0TM">Hole To Hole Clearance (Gap=19.685mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJTHZFZKT0VJKHHUYDS55ILBEAIBJTYVOY3VSN0K2AUUXJF3GYRYI">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQAGLM3VWTZ5ENF0BNXUDHYU4JE0KEV1GIPZMSJFTCAJY124MGIFH">Silk To Solder Mask (Clearance=5.906mil) (IsPad),(All)</a></td>
+<td class="column2">80</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVQMGSPLPK5KEWGSSSY514031EUOGDKLUCMCIJKMPHCWW03E2BSP">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBQJHX0KU02YTLCC311KI1XAQ0GZNIMOOBYB3EZF0XQJULPW330HL">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCA2ESVZOJL05C3WFWXTHFF4MXGHYG0OS3N5PUKK0AIZEV2LRWHNE">Matched Lengths(Tolerance=1000mil) (InDifferentialPairClass('DIFF120'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSG3OMWRO5ZCQPBBMS3WWUWU3YBSJKVCLJ2BSIIYOSA2FIJ4F4EP">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">80</td>
+</tr>
+</table><br><a name="IDQAGLM3VWTZ5ENF0BNXUDHYU4JE0KEV1GIPZMSJFTCAJY124MGIFH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=5.906mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5636.58mil|Location2.X=5643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5636.58mil|Location2.X=5643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-1(4850mil,1970.472mil) on Top Layer And Track (4840.158mil,1993.11mil)(4850mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5636.58mil|Location2.X=5643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5636.58mil|Location2.X=5643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-1(4850mil,1970.472mil) on Top Layer And Track (4840.158mil,1993.11mil)(4850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-1(4850mil,1970.472mil) on Top Layer And Track (4850mil,1993.11mil)(4859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5656.265mil|Location2.X=5663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5656.265mil|Location2.X=5663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-1(4850mil,1970.472mil) on Top Layer And Track (4850mil,2006.89mil)(4859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-2(4850mil,2029.528mil) on Top Layer And Track (4840.158mil,1993.11mil)(4850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5637.564mil|Location2.X=5644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5637.564mil|Location2.X=5644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-2(4850mil,2029.528mil) on Top Layer And Track (4841.142mil,2006.89mil)(4850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-2(4850mil,2029.528mil) on Top Layer And Track (4850mil,2006.89mil)(4858.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5646.422mil|Location2.X=5653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D10-2(4850mil,2029.528mil) on Top Layer And Track (4850mil,2006.89mil)(4859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1236.58mil|Location2.X=1243.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1236.58mil|Location2.X=1243.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-1(450mil,1970.472mil) on Top Layer And Track (440.158mil,1993.11mil)(450mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1236.58mil|Location2.X=1243.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1236.58mil|Location2.X=1243.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-1(450mil,1970.472mil) on Top Layer And Track (440.158mil,1993.11mil)(450mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-1(450mil,1970.472mil) on Top Layer And Track (450mil,1993.11mil)(459.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1256.265mil|Location2.X=1263.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1256.265mil|Location2.X=1263.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-1(450mil,1970.472mil) on Top Layer And Track (450mil,2006.89mil)(459.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-2(450mil,2029.528mil) on Top Layer And Track (440.158mil,1993.11mil)(450mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.564mil|Location2.X=1244.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.564mil|Location2.X=1244.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-2(450mil,2029.528mil) on Top Layer And Track (441.142mil,2006.89mil)(450mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-2(450mil,2029.528mil) on Top Layer And Track (450mil,2006.89mil)(458.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1246.422mil|Location2.X=1253.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D1-2(450mil,2029.528mil) on Top Layer And Track (450mil,2006.89mil)(459.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1636.58mil|Location2.X=1643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1636.58mil|Location2.X=1643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-1(850mil,1970.472mil) on Top Layer And Track (840.158mil,1993.11mil)(850mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1636.58mil|Location2.X=1643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1636.58mil|Location2.X=1643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-1(850mil,1970.472mil) on Top Layer And Track (840.158mil,1993.11mil)(850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-1(850mil,1970.472mil) on Top Layer And Track (850mil,1993.11mil)(859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1656.265mil|Location2.X=1663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1656.265mil|Location2.X=1663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-1(850mil,1970.472mil) on Top Layer And Track (850mil,2006.89mil)(859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-2(850mil,2029.528mil) on Top Layer And Track (840.158mil,1993.11mil)(850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1637.564mil|Location2.X=1644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1637.564mil|Location2.X=1644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-2(850mil,2029.528mil) on Top Layer And Track (841.142mil,2006.89mil)(850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-2(850mil,2029.528mil) on Top Layer And Track (850mil,2006.89mil)(858.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1646.422mil|Location2.X=1653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D2-2(850mil,2029.528mil) on Top Layer And Track (850mil,2006.89mil)(859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2136.58mil|Location2.X=2143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2136.58mil|Location2.X=2143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-1(1350mil,1970.472mil) on Top Layer And Track (1340.158mil,1993.11mil)(1350mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2136.58mil|Location2.X=2143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2136.58mil|Location2.X=2143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-1(1350mil,1970.472mil) on Top Layer And Track (1340.158mil,1993.11mil)(1350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-1(1350mil,1970.472mil) on Top Layer And Track (1350mil,1993.11mil)(1359.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2156.265mil|Location2.X=2163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2156.265mil|Location2.X=2163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-1(1350mil,1970.472mil) on Top Layer And Track (1350mil,2006.89mil)(1359.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-2(1350mil,2029.528mil) on Top Layer And Track (1340.158mil,1993.11mil)(1350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2137.564mil|Location2.X=2144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2137.564mil|Location2.X=2144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-2(1350mil,2029.528mil) on Top Layer And Track (1341.142mil,2006.89mil)(1350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-2(1350mil,2029.528mil) on Top Layer And Track (1350mil,2006.89mil)(1358.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2146.422mil|Location2.X=2153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D3-2(1350mil,2029.528mil) on Top Layer And Track (1350mil,2006.89mil)(1359.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2636.58mil|Location2.X=2643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2636.58mil|Location2.X=2643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-1(1850mil,1970.472mil) on Top Layer And Track (1840.158mil,1993.11mil)(1850mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2636.58mil|Location2.X=2643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2636.58mil|Location2.X=2643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-1(1850mil,1970.472mil) on Top Layer And Track (1840.158mil,1993.11mil)(1850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-1(1850mil,1970.472mil) on Top Layer And Track (1850mil,1993.11mil)(1859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2656.265mil|Location2.X=2663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2656.265mil|Location2.X=2663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-1(1850mil,1970.472mil) on Top Layer And Track (1850mil,2006.89mil)(1859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-2(1850mil,2029.528mil) on Top Layer And Track (1840.158mil,1993.11mil)(1850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2637.564mil|Location2.X=2644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2637.564mil|Location2.X=2644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-2(1850mil,2029.528mil) on Top Layer And Track (1841.142mil,2006.89mil)(1850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-2(1850mil,2029.528mil) on Top Layer And Track (1850mil,2006.89mil)(1858.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2646.422mil|Location2.X=2653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D4-2(1850mil,2029.528mil) on Top Layer And Track (1850mil,2006.89mil)(1859.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3136.58mil|Location2.X=3143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3136.58mil|Location2.X=3143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-1(2350mil,1970.472mil) on Top Layer And Track (2340.157mil,1993.11mil)(2350mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3136.58mil|Location2.X=3143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3136.58mil|Location2.X=3143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-1(2350mil,1970.472mil) on Top Layer And Track (2340.157mil,1993.11mil)(2350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-1(2350mil,1970.472mil) on Top Layer And Track (2350mil,1993.11mil)(2359.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.265mil|Location2.X=3163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.265mil|Location2.X=3163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-1(2350mil,1970.472mil) on Top Layer And Track (2350mil,2006.89mil)(2359.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-2(2350mil,2029.528mil) on Top Layer And Track (2340.157mil,1993.11mil)(2350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3137.564mil|Location2.X=3144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3137.564mil|Location2.X=3144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-2(2350mil,2029.528mil) on Top Layer And Track (2341.142mil,2006.89mil)(2350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-2(2350mil,2029.528mil) on Top Layer And Track (2350mil,2006.89mil)(2358.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3146.422mil|Location2.X=3153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D5-2(2350mil,2029.528mil) on Top Layer And Track (2350mil,2006.89mil)(2359.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3636.58mil|Location2.X=3643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3636.58mil|Location2.X=3643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-1(2850mil,1970.472mil) on Top Layer And Track (2840.157mil,1993.11mil)(2850mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3636.58mil|Location2.X=3643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3636.58mil|Location2.X=3643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-1(2850mil,1970.472mil) on Top Layer And Track (2840.157mil,1993.11mil)(2850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-1(2850mil,1970.472mil) on Top Layer And Track (2850mil,1993.11mil)(2859.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3656.265mil|Location2.X=3663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3656.265mil|Location2.X=3663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-1(2850mil,1970.472mil) on Top Layer And Track (2850mil,2006.89mil)(2859.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-2(2850mil,2029.528mil) on Top Layer And Track (2840.157mil,1993.11mil)(2850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3637.564mil|Location2.X=3644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3637.564mil|Location2.X=3644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-2(2850mil,2029.528mil) on Top Layer And Track (2841.142mil,2006.89mil)(2850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-2(2850mil,2029.528mil) on Top Layer And Track (2850mil,2006.89mil)(2858.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3646.422mil|Location2.X=3653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D6-2(2850mil,2029.528mil) on Top Layer And Track (2850mil,2006.89mil)(2859.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4136.58mil|Location2.X=4143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4136.58mil|Location2.X=4143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-1(3350mil,1970.472mil) on Top Layer And Track (3340.157mil,1993.11mil)(3350mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4136.58mil|Location2.X=4143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4136.58mil|Location2.X=4143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-1(3350mil,1970.472mil) on Top Layer And Track (3340.157mil,1993.11mil)(3350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-1(3350mil,1970.472mil) on Top Layer And Track (3350mil,1993.11mil)(3359.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4156.265mil|Location2.X=4163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4156.265mil|Location2.X=4163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-1(3350mil,1970.472mil) on Top Layer And Track (3350mil,2006.89mil)(3359.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-2(3350mil,2029.528mil) on Top Layer And Track (3340.157mil,1993.11mil)(3350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4137.564mil|Location2.X=4144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4137.564mil|Location2.X=4144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-2(3350mil,2029.528mil) on Top Layer And Track (3341.142mil,2006.89mil)(3350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-2(3350mil,2029.528mil) on Top Layer And Track (3350mil,2006.89mil)(3358.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.422mil|Location2.X=4153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D7-2(3350mil,2029.528mil) on Top Layer And Track (3350mil,2006.89mil)(3359.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4636.58mil|Location2.X=4643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4636.58mil|Location2.X=4643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-1(3850mil,1970.472mil) on Top Layer And Track (3840.157mil,1993.11mil)(3850mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4636.58mil|Location2.X=4643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4636.58mil|Location2.X=4643.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-1(3850mil,1970.472mil) on Top Layer And Track (3840.157mil,1993.11mil)(3850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-1(3850mil,1970.472mil) on Top Layer And Track (3850mil,1993.11mil)(3859.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4656.265mil|Location2.X=4663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4656.265mil|Location2.X=4663.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-1(3850mil,1970.472mil) on Top Layer And Track (3850mil,2006.89mil)(3859.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-2(3850mil,2029.528mil) on Top Layer And Track (3840.157mil,1993.11mil)(3850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4637.564mil|Location2.X=4644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4637.564mil|Location2.X=4644.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-2(3850mil,2029.528mil) on Top Layer And Track (3841.142mil,2006.89mil)(3850mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-2(3850mil,2029.528mil) on Top Layer And Track (3850mil,2006.89mil)(3858.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4646.422mil|Location2.X=4653.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D8-2(3850mil,2029.528mil) on Top Layer And Track (3850mil,2006.89mil)(3859.843mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5136.58mil|Location2.X=5143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5136.58mil|Location2.X=5143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-1(4350mil,1970.472mil) on Top Layer And Track (4340.158mil,1993.11mil)(4350mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5136.58mil|Location2.X=5143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5136.58mil|Location2.X=5143.735mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-1(4350mil,1970.472mil) on Top Layer And Track (4340.158mil,1993.11mil)(4350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-1(4350mil,1970.472mil) on Top Layer And Track (4350mil,1993.11mil)(4359.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5156.265mil|Location2.X=5163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5156.265mil|Location2.X=5163.42mil|Location1.Y=2585.103mil|Location2.Y=2592.259mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-1(4350mil,1970.472mil) on Top Layer And Track (4350mil,2006.89mil)(4359.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-2(4350mil,2029.528mil) on Top Layer And Track (4340.158mil,1993.11mil)(4350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5137.564mil|Location2.X=5144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5137.564mil|Location2.X=5144.719mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-2(4350mil,2029.528mil) on Top Layer And Track (4341.142mil,2006.89mil)(4350mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-2(4350mil,2029.528mil) on Top Layer And Track (4350mil,2006.89mil)(4358.858mil,2006.89mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ryan\Google Drive (rvtran@ucsd.edu)\Triton AI\fuse-board\Fuse Board V2.1\Fuse_Board_V2-1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5146.422mil|Location2.X=5153.578mil|Location1.Y=2607.741mil|Location2.Y=2614.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5.906mil) Between Pad D9-2(4350mil,2029.528mil) on Top Layer And Track (4350mil,2006.89mil)(4359.842mil,1993.11mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
